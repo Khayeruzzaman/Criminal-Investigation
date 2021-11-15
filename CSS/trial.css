@@ -1,0 +1,37 @@
+*{
+	margin: 0;
+	padding: 0;
+	user-select: none;
+	color: white;
+	box-sizing: border box;
+}
+
+.sidebar {
+	position: fixed;
+	width: 250px;
+	height: 100%;
+	left: 0;
+	background: #042331;
+}
+
+.sidebar .dashboard{
+	color: white;
+	font-size: 25px;
+	font-weight: 600;
+	line-height: 65px;
+	text-align: center;
+	background: #063146;
+	letter-spacing: 1px;
+}
+
+nav ul{
+	background: #042331;
+	list-style: none;
+}
+
+nav ul li{
+	line-height: 60px;
+	border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+
