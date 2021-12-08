@@ -79,7 +79,7 @@
         if($Name != "" && $mob != "" && $password != "" && $nid != "" && $address != "" )
         {
          
-          $ins=insertCitizen($Name, $mob , $password, $nid, $address);
+          $ins=insertAdmin($Name, $mob , $password, $nid, $address);
           
           echo '<script language="javascript">  if ( confirm("Successfully Added") ){
 

@@ -70,14 +70,14 @@
         <br>
         <br>
         
-        <input type="submit" id="submit" name="Login" value="Login" style="width: 250px; height: 40px;">
+        <input type="submit" id="submit" name="Login" value="Login" style="width: 300px; height: 40px;">
         <p style="color:red"><?php echo $msg; ?></p>
         <br>
 
         <center>
             <label><a href="#">Forgot Password?</a></label>
             <br>
-            <label> Don't have any account?<a href="CitizenReg.php">Sign Up</a> </label> 
+            <label> Don't have any account?<br><a href="CitizenReg.php">Sign Up</a> </label> 
         </center>
         
 
@@ -97,7 +97,7 @@
     <div class="footer">
         <footer>
             <center>
-                <p style="color: white;">Copyright@2021</p>
+                <p style="color: black;">Copyright@2021</p>
             </center>
         </footer>
     </div>            

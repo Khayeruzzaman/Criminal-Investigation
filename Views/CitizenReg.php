@@ -87,7 +87,6 @@
                         </center> 
 
                 </form>
-        <p id="errorMsg"></p>
-        </div>
+    </div>
 </body>
 </html>

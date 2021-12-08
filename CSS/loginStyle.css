@@ -5,11 +5,8 @@
 	
 }
 body {
-        background-image: url('../Pictures/back1.jpg');
-          min-height: 100%; 
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+        
+        background-color: white;
 }
 
 .form legend{
@@ -21,13 +18,13 @@ body {
 }
 
 .form {
-        width:260px;
-        margin: 30px 530px;
+        width:300px;
+        margin: 30px 490px;
         padding:50px;
         border-radius: 10px;
         box-shadow: 0px 0px 30px black;
-        background-color: transparent; 
-        color: #34495e;
+        background: linear-gradient(315deg, #bf3a30 0%, #864ba2 74%);
+        
 
       }
 .form  label {
@@ -63,8 +60,8 @@ body {
 #submit{
          
         text-align: center;
-        background-color: #063146;
-        color: white;
+        background: linear-gradient(315deg, #6a93cb 0%, #a4bfef 74%);
+        color: black;
         text-transform: uppercase; 
         font-weight: 900;
         border-bottom: 5px solid black;
@@ -72,29 +69,31 @@ body {
         cursor: pointer;
       }
 
-      #submit:hover {
-        background-color: #ddd;
-        color: black;
+      #submit:hover{
+        background: #ddd;
+        border-bottom: 5px solid black;
+        color: white;
       }
 
 .topnav{
     
-            background-color: #063146;
-            padding: 1% 7%;
-            text-align: right;
+            background: linear-gradient(315deg, #5de6de 0%, #b58ecc 74%);
+            padding: 1%;
+            text-align: center;
+            font-size: 20px;
+            
         }
 
 .topnav a{
                       
-            color: white;
+            color: black;
             padding: 5px 15px;
             text-decoration: none;
             cursor: pointer;
         }
 
 .topnav a:hover{
-    background-color: #ddd;
-    color: black;
+    color: white;
 }
 
 .reg-container{
@@ -108,7 +107,7 @@ body {
             position: absolute;
             top:23px;
             right: 0px;
-            background-color: #063146;
+            background: linear-gradient(315deg, #5de6de 0%, #b58ecc 74%);
             text-align: left;
             min-width: 100px;
             display: none;
@@ -116,23 +115,26 @@ body {
         }
 .reg-content a{
             display: block;
-            color: white;
-            padding: 5px 22px;
+            color: black;
+            padding: 5px 32px;
             text-decoration: none;
         
         }
 
 .reg-content a:hover {
-            background-color: #ddd;
-            color: black;
+            
+            color: White;
         }
 .reg-container:hover .reg-content{
             display: block;
         }
 
 .footer {
+    background: linear-gradient(315deg, #5de6de 0%, #b58ecc 74%);
+    padding: 0.5%;
+    text-align: center;
+    position:fixed;
+    bottom:0;
+    width:100%;
     
-	background-color: #063146;
-	padding: 1% 7%;
-	
 }

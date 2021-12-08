@@ -4,15 +4,12 @@
 if (isset($_COOKIE['flag']))
  {
     require_once('../Model/usersModel.php');
-    $user = "admin_reg";
-    $userName = $_SESSION['userName'];
-    $password = $_SESSION['password'];
-    $id = getUserById($user, $userName, $password);
-    $user = getUser($user,$id);
+    $citizen = getUserById('admin', $_SESSION['mobNum'], $_SESSION['password']);
+    $user = getUser('admin',$citizen);  
  }
  else
  {
-    header('location: login.php');
+    header('location:../Controller/Logout.php');
  }
 
 ?>
@@ -23,18 +20,22 @@ if (isset($_COOKIE['flag']))
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
      <link rel="stylesheet" type="text/css" href="../CSS/homeStyle.css">
      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    
+
+    
      
 </head>
 <body>
 
     
         
-        <div id="header">
+        <div class="topnav">
 
             <div class="login">
-                <p> Welcome <a href="Viewpro.php"> <?php echo $_SESSION['userName']; ?> <i class="fa fa-user">  </i>  </a> |
-                <a href= "../../Controller/Admin/Logout.php"><i class="fa fa-sign-out"></i> </a> 
-            </p>
+                    <p style="color:White;"> Welcome <a href="#"> <?php echo $user['ADMIN_NAME']; ?> <i class="fa fa-user">  </i>  </a> |
+                    <a href= "../Controller/Logout.php"><i class="fa fa-sign-out">Logout</i> </a> 
+                    </p>
             </div>
            
             
@@ -44,11 +45,11 @@ if (isset($_COOKIE['flag']))
 
         <div id="dashboard">
 
-            <h1 id="admin"> Admin Account </h1>
+            <h1 id="admin"> Admin Panel </h1>
 
             <ul>
                 <li> <a href= "Dashboard.php"> <i class="fa fa-server"> Dashboard </i> </a> </li>
-                <li> <a href= "Viewpro.php"> <i class="fa fa-user-circle"> View Profile </i> </a> </li>
+                <li> <a href= "viewProfile.php"> <i class="fa fa-user-circle"> View Profile </i> </a> </li>
                 <li> 
                     <a herf="" class="feat-btn">
                         <i class="fa fa-users"> Users <span class="fa fa-caret-down first"> </span> </i> 
@@ -60,29 +61,27 @@ if (isset($_COOKIE['flag']))
                                 </span> </i> 
                             </a> 
                             <ul class="user-show"> 
-                                <li><a href="AdminReg.php"><i class="fa fa-user-plus"> Admin </i></a></li>
-                                <li><a href="DoctorRegistration.php"><i class="fa fa-user-md"> Doctor </i></a></li>
-                                <li><a href="pharmacyReg.php"><i class="fa fa-plus-square"> Pharmacy </i></a></li>
+                                <li><a href="adminReg.php"><i class="fa fa-user-plus"> Admin </i></a></li>
+                                <li><a href="ManuCitizenReg.php"><i class="fa fa-user-plus"> Citizen </i></a></li>
+                                <li><a href="PoliceReg.php"><i class="fa fa-plus-square"> Police </i></a></li>
                             </ul>
 
                         </li>    
                         <li> <a href= "SearchUsers.php"> <i class="fa fa-search"> Search Users </i> </a> </li>
-                        <li> <a href= "RemoveUsers.php"> <i class="fa fa-user-times"> Remove Users </i> </a> </li>
-                        <li> <a href= "ViewUsers.php"> <i class="fa fa-list"> All Users List </i> </a> </li>
+                        
                     </ul>
                 <li> 
                     <a href= "#" class="req-btn"> 
-                        <i class="fa fa-users"> Requests <span class="fa fa-caret-down third">
+                        <i class="fa fa-list"> All Users List <span class="fa fa-caret-down third">
                         </span></i> 
                     </a>
                     <ul class="req-show">
-                        <li> <a href= "docReq.php"> <i class="fa fa-users"> Doctor </i> </a> </li>
-                        <li> <a href= "pharmacy_req.php"> <i class="fa fa-users"> Pharmacy </i> </a> </li>
+                        <li> <a href= "#"> <i class="fa fa-users"> Police </i> </a> </li>
+                        <li> <a href= "#"> <i class="fa fa-users"> Citizen </i> </a> </li>
+                        <li> <a href= "#"> <i class="fa fa-users"> Criminal </i> </a> </li>
                     </ul> 
                 </li>
                 
-                
-                <li> <a href= "../../Controller/Admin/Logout.php"><i class="fa fa-sign-out"> Logout </i> </a> </li>
             </ul>
             
         </div> 
