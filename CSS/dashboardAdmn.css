@@ -212,27 +212,9 @@
 }
 
 
-.dashContent .requestUsers .doctor1 {
-    
-    margin-top: 25px;
-	min-height: 60vh;
-	box-shadow: 0px 0px 30px black;
-    
-    background: #ddd;
-    
-    border-radius: 4px;
-}
 
-.dashContent .requestUsers .pharmacy1 {
-    
-    margin-top: 25px;
-	min-height: 60vh;
-    box-shadow: 0px 0px 30px black;
-    background: #ddd;
-    border-radius: 4px;
-}
 
-#doctor{
+#lTable{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
     border-collapse: collapse;
@@ -242,25 +224,26 @@
 
 }
 
-#doctor td,th{
+#lTable td,th{
   border: 2px solid #063146;
-  padding: 2px 2px;
+  padding: 15px 15px;
   
   
 }
 
 
 
-#doctor th{
+#lTable th{
 	text-transform: uppercase;
 	background-color: #042331;
 	color: white;
+	padding: 15px 15px;
 	
   
 }
 
 
-#doctor #btn{
+#lTable #btn{
 	width: 80px;
 	height: 25px;
 	background:darkslategray;
@@ -268,7 +251,7 @@
 	text-transform: uppercase;
 }
 
-#doctor #btn:hover{
+#lTable #btn:hover{
 	background: #042331;
 	color: cyan;
 }

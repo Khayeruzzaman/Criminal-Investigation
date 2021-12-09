@@ -5,11 +5,6 @@
     $data = $_POST['data'];
     $mydata = json_decode($data);
 
-    $user = "admin";
-    $mobNum = $_SESSION['mobNum'];
-    $password = $_SESSION['password'];
-    $id = getUserById($user,$mobNum, $password);
-    $user = getUser($user, $id);
 
     $mobnoErr = $nameErr = $nidnoErr = $addErr = "";
 
@@ -18,25 +13,23 @@
     $nidno= "";
     $address = "";
 
-	
+	       
+         $id = $mydata->id;
         
-          $Name = trim($mydata->name);
+          $Name = $mydata->name;
           $mobno = $mydata->mobno;
           $address = $mydata->address;
           $nidno = $mydata->nidno;
+
 
   
 
        if($Name != "" && $mobno != "" && $address != "" && $nidno != "")
         {
 
-          updateAdmin($id, $Name, $mobno, $nidno, $address);
+          updateCitizen($id, $Name, $mobno, $nidno, $address);
           
-          
-          $_SESSION['mobNum'] = $mobno;
-          $_SESSION['password'] = $password;
-          
-          echo "Successfully Updated!";
+          echo "Updated Successfully!";
           
 
         }

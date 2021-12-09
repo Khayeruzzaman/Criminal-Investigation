@@ -1,14 +1,14 @@
 <?php
     
     require_once('../Model/usersModel.php');
-    $NameErr = $mobErr = $passwordErr = $nidErr = $addressErr = "" ;
+    $NameErr = $mobErr = $passwordErr = $jobPostErr = $postalCodeErr = $joinDateErr ="" ;
 
       $Name = ""; 
       $mob = "";
+      $jobPost ="";
+      $joinDate = "";
       $password= "";
-      $nid = "";
-      $address = "";
-      $status = "reset";
+      $postalCode = "";
     
     if(isset($_POST["submit"]))
     {
@@ -60,30 +60,32 @@
           
         
 
-        if (empty($_POST['nid'])) {
-               $nidErr = "Please fill up your nid properly!"; 
+        if (empty($_POST['jobPost'])) {
+               $jobPostErr = "Please fill up the Job Post properly!"; 
         } 
 
         else { 
-          $nid = $_POST['nid']; 
+          $jobPost = $_POST['jobPost']; 
         }
         
-        if(empty($_POST['address'])) {
-          $addressErr = "Please fill up present address properly";
+        if(empty($_POST['postalCode'])) {
+          $postalCodeErr = "Please fill up the Postal Code properly";
         }
         else {
-          $address = $_POST['address'];
+          $postalCode = $_POST['postalCode'];
         }
 
+        $joinDate = date("d/m/Y", strtotime($_POST['joinDate']));
 
-        if($Name != "" && $mob != "" && $password != "" && $nid != "" && $address != "" )
+
+        if($Name != "" && $jobPost != "" &&  $joinDate != "" && $mob != "" && $password != "" && $postalCode != "" )
         {
          
-          $ins=insertCitizen($Name, $mob , $password, $nid, $address);
+          $ins=insertPolice($Name, $jobPost, $joinDate, $mob , $password, $postalCode);
           
           echo '<script language="javascript">  if ( confirm("Successfully Added") ){
 
-            window.location= "http://localhost/Task/Criminal-Investigation/Views/login.php";
+            window.location= "http://localhost/Task/Criminal-Investigation/Views/policeReg.php";
 
            }</script>';
 

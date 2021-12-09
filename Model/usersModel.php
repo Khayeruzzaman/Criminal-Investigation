@@ -38,6 +38,17 @@
 		
 	}
 
+	function insertPolice($Name, $jobPost, $joinDate, $mob , $password, $postalCode){
+		$conn = getConnection();
+		$sql = "INSERT INTO police VALUES (police_police_id.NEXTVAL, '$jobPost', TO_DATE('$joinDate','dd-mm-yyyy'),
+		'$mob', '$password', '$postalCode','$Name')";
+
+		$result = oci_parse($conn, $sql);
+
+		oci_execute($result);
+		
+	}
+
 	function getUserById($user,$mobNum, $password){
 
 		$conn = getConnection();
@@ -51,7 +62,17 @@
 	function getUser($user, $id){
 
 		$conn = getConnection();
-		$sql = "SELECT * FROM ".$user." WHERE admin_id='{$id}'";
+		$sql = "SELECT * FROM ".$user." WHERE ".$user."_id='{$id}'";
+		$result = oci_parse($conn, $sql);
+		oci_execute($result);
+		$user = oci_fetch_array($result, OCI_ASSOC);
+		return $user;
+	}
+
+	function getCitizen($user, $id){
+
+		$conn = getConnection();
+		$sql = "SELECT * FROM ".$user." WHERE citizen_id='{$id}'";
 		$result = oci_parse($conn, $sql);
 		oci_execute($result);
 		$user = oci_fetch_array($result, OCI_ASSOC);
@@ -83,7 +104,42 @@
 		oci_execute($result);
 
 	}
-	
+
+	function updateCitizen($id, $Name, $mobno, $nidno, $address){
+		$conn = getConnection();
+		
+		$sql = "UPDATE citizens SET CITIZEN_NAME = '{$Name}', MOBILENO = '{$mobno}',
+				NIDNO = '{$nidno}', ADDRESS='{$address}'
+				WHERE citizen_id = {$id}";
+		$result = oci_parse($conn, $sql);
+		oci_execute($result);
+
+	}
+
+	function updatePolice($id, $Name,$jobPost, $joinDate, $mobno, $postalCode){
+		$conn = getConnection();
+		
+		$sql = "UPDATE police SET POLICE_NAME = '{$Name}', POLICE_MOBILENO = '{$mobno}',
+				JOB_POST = '{$jobPost}', JOIN_DATE='{$joinDate}', POSTAL_CODE='{$postalCode}'
+				WHERE police_id = {$id}";
+		$result = oci_parse($conn, $sql);
+		oci_execute($result);
+
+	}
+
+	function delete($id){
+		$conn = getConnection();
+		$sql = "DELETE FROM citizens WHERE CITIZEN_ID='{$id}'";
+		$result = oci_parse($conn, $sql);
+		oci_execute($result);
+	}
+
+	function deletePolice($id){
+		$conn = getConnection();
+		$sql = "DELETE FROM police WHERE POLICE_ID='{$id}'";
+		$result = oci_parse($conn, $sql);
+		oci_execute($result);
+	}
 
 
 ?>

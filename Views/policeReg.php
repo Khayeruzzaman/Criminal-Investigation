@@ -1,20 +1,21 @@
 <?php 
-    $title = 'Add Citizen';
+    $title = 'Add Police';
     include('header.php');
 
-     $NameErr = $mobErr = $passwordErr = $nidErr = $addressErr = "" ;
+     $NameErr = $mobErr = $passwordErr = $jobPostErr = $postalCodeErr = $joinDateErr ="" ;
 
       $Name = ""; 
       $mob = "";
-      $userName= "";
+      $jobPost ="";
+      $joinDate = "";
       $password= "";
-      $nid = "";
-      $address = ""; 
+      $postalCode = "";
       
-      include '../Controller/ManuCitizenRegCheck.php';
+      
+      include '../Controller/PoliceRegCheck.php';
 ?>
 <style type="text/css">
-	.form legend{
+    .form legend{
     font-size: 20px;
     font-weight: bold;
     text-align: center;
@@ -81,11 +82,11 @@
 </style>
 
 <div id="mainview">
-	<div class="form">
+    <div class="form">
 
-	<form method="POST" name="jsForm" >
+    <form method="POST" name="jsForm" >
                     
-            <legend><b><center>CITIZEN REGISTRATION</center></b></legend>
+            <legend><b><center>Police REGISTRATION</center></b></legend>
             <br>
 
 
@@ -95,9 +96,19 @@
             <p style="color:red" id="NameErr"><?php echo $NameErr; ?></p>
             <br>
 
+            <label for="jobPost"><b>Job Post</label>
+            
+            <input type="text" id="jobPost" name="jobPost" value="<?php echo $jobPost;?>">
+            <p style="color:red" id="jobPostErr"><?php echo $jobPostErr; ?></p>
+            <br>
+
+            <label for="joinDate"><b>Join Date</label>
+            
+            <input type="Date" id="joinDate" name="joinDate" value="<?php echo $joinDate;?>">
+
             <label for="mob"><b>Mobile No</label>
             
-            <input type="test" id="mob" name="mob" value="<?php echo $mob;?>">
+            <input type="text" id="mob" name="mob" value="<?php echo $mob;?>">
             <p style="color:red" id="mobErr"><?php echo $mobErr; ?></p>
             <br>
 
@@ -108,27 +119,18 @@
             <p style="color:red" id="passwordErr"><?php echo $passwordErr; ?></p>
             <br>
 
-            <label for="nid"><b>Nid NO</label>
-            <input type="text" id="nid" name="nid" value="<?php echo $nid;?>">
-            <p style="color:red" id="nidErr"><?php echo $nidErr; ?></p>
+            <label for="postalCode"><b>Postal Code</label>
+            <input type="text" id="postalCode" name="postalCode" value="<?php echo $postalCode;?>">
+            <p style="color:red" id="postalCodeErr"><?php echo $postalCodeErr; ?></p>
             <br>
 
-            <label> <b>Address</label>
-            <input type="text" id="address" name="address" 
-                value="<?php echo $address;?>">
-
-            <p style="color:red" id="addressErr"><?php echo $addressErr; ?></p>
-            <br>
-                
-    
-            
             <center>
             <input type="submit" id="submit" name="submit" value="Submit"  style="width: 260px; display: inline-block; height: 45px">
            
             </center> 
 
     </form>
-	</div>
+    </div>
 
 </div>
 
