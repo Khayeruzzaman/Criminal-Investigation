@@ -48,7 +48,7 @@ if (isset($_COOKIE['flag']))
             <h1 id="admin"> Admin Panel </h1>
 
             <ul>
-                <li> <a href= "Dashboard.php"> <i class="fa fa-server"> Dashboard </i> </a> </li>
+                <li> <a href= "Dashboard.php"> <i class="fa fa-bars"> Dashboard </i> </a> </li>
                 <li> <a href= "viewProfile.php"> <i class="fa fa-user-circle"> View Profile </i> </a> </li>
                 <li> 
                     <a herf="" class="feat-btn">
@@ -81,6 +81,8 @@ if (isset($_COOKIE['flag']))
                         <li> <a href= "CriminalList.php"> <i class="fa fa-users"> Criminal </i> </a> </li>
                     </ul> 
                 </li>
+
+                <li><a href= "settings.php"> <i class="fa fa-cog"> Settings </i> </a></li>
                 
             </ul>
             
