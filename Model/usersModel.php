@@ -1,6 +1,6 @@
 <?php
 	require_once('DB_config.php');
-	
+	error_reporting(0);
 	function validate($mobNum, $password){
 
 		$conn = getConnection();
@@ -23,7 +23,18 @@
 
 		$result = oci_parse($conn, $sql);
 
-		oci_execute($result);
+            if(!oci_execute($result)){
+                $r= oci_error($result);
+                
+                $err_msg = explode("ORA-",strval($r['message']));
+                $err_msg = explode("\n",$err_msg[1]);
+                
+                    echo '<script language="javascript">
+                    alert("'.$err_msg[0].'")
+                    </script>';
+            }else{
+                oci_execute($result);
+            }
 		
 	}
 
@@ -33,19 +44,35 @@
 		'$mob', '$password', '$nid', '$address')";
 
 		$result = oci_parse($conn, $sql);
-
 		oci_execute($result);
+
 		
 	}
 
-	function insertPolice($Name, $jobPost, $joinDate, $mob , $password, $postalCode){
+	function insertPolice($Name, $jobPost, $joinDate, $mob , $password, $postalCode, $sal){
 		$conn = getConnection();
 		$sql = "INSERT INTO police VALUES (police_police_id.NEXTVAL, '$jobPost', TO_DATE('$joinDate','dd-mm-yyyy'),
-		'$mob', '$password', '$postalCode','$Name')";
+		'$mob', '$password', '$postalCode','$Name','$sal')";
 
 		$result = oci_parse($conn, $sql);
 
-		oci_execute($result);
+            if(!oci_execute($result)){
+                $r= oci_error($result);
+                
+                $err_msg = explode("ORA-",strval($r['message']));
+                $err_msg = explode("\n",$err_msg[1]);
+                
+                    echo '<script language="javascript">
+                    alert("'.$err_msg[0].'")
+                    </script>';
+            }else{
+                oci_execute($result);
+                echo '<script language="javascript">  if ( confirm("Successfully Added") ){
+
+		            window.location= "http://localhost/Task/Criminal-Investigation/Views/policeReg.php";
+
+		           }</script>';
+            }
 		
 	}
 
@@ -112,18 +139,38 @@
 				NIDNO = '{$nidno}', ADDRESS='{$address}'
 				WHERE citizen_id = {$id}";
 		$result = oci_parse($conn, $sql);
-		oci_execute($result);
+
+        oci_execute($result);
 
 	}
 
-	function updatePolice($id, $Name,$jobPost, $joinDate, $mobno, $postalCode){
+	function updatePolice($id, $Name,$jobPost, $joinDate, $mobno, $sal, $postalCode){
 		$conn = getConnection();
 		
 		$sql = "UPDATE police SET POLICE_NAME = '{$Name}', POLICE_MOBILENO = '{$mobno}',
-				JOB_POST = '{$jobPost}', JOIN_DATE='{$joinDate}', POSTAL_CODE='{$postalCode}'
+				JOB_POST = '{$jobPost}', JOIN_DATE='{$joinDate}', POSTAL_CODE='{$postalCode}' , SALARY='{$sal}'
 				WHERE police_id = {$id}";
 		$result = oci_parse($conn, $sql);
-		oci_execute($result);
+
+            if(!oci_execute($result)){
+                $r= oci_error($result);
+                
+                $err_msg = explode("ORA-",strval($r['message']));
+                $err_msg = explode("\n",$err_msg[1]);
+                if(substr_compare("20120:","20120:",0)==0){
+
+                    echo $err_msg[0];
+
+                }elseif(substr_compare("20121:","20121:",0)==0){
+
+                    echo $err_msg[0];
+                }
+
+
+            }else{
+                oci_execute($result);
+                echo 'Updated Successfully';
+            }
 
 	}
 
@@ -138,7 +185,18 @@
 		$conn = getConnection();
 		$sql = "DELETE FROM police WHERE POLICE_ID='{$id}'";
 		$result = oci_parse($conn, $sql);
-		oci_execute($result);
+		if(!oci_execute($result)){
+                $r= oci_error($result);
+                $err_msg = explode("ORA-",strval($r['message']));
+                $err_msg = explode("\n",$err_msg[1]);
+                
+                echo '<script language="javascript">
+                alert("'.$err_msg[0].'")
+                </script>';
+
+            }else{
+                oci_execute($result);
+            }
 	}
 
 

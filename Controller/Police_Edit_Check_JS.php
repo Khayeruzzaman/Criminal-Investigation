@@ -12,15 +12,16 @@
     $mobno = $mydata->mobno;
     $jobPost = $mydata->jobPost;
     $joinDate = $mydata->joinDate;
+    $sal = $mydata->sal;
     $postalCode = $mydata->postalCode;
 
 
-   if($Name != "" && $mobno != "" && $jobPost != "" && $joinDate != "" && $postalCode != "")
+   if($Name != "" && $mobno != "" && $jobPost != "" && $joinDate != "" && $postalCode != "" && $sal != "")
     {
 
-      updatePolice($id, $Name, $jobPost, $joinDate, $mobno, $postalCode);
+      updatePolice($id, $Name, $jobPost, $joinDate, $mobno, $sal, $postalCode);
       
-      echo "Updated Successfully!";
+      
       
     }
             

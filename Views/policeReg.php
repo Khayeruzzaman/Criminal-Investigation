@@ -10,6 +10,7 @@
       $joinDate = "";
       $password= "";
       $postalCode = "";
+      $sal ="";
       
       
       include '../Controller/PoliceRegCheck.php';
@@ -86,7 +87,7 @@
 
     <form method="POST" name="jsForm" >
                     
-            <legend><b><center>Police REGISTRATION</center></b></legend>
+            <legend><b><center>POLICE REGISTRATION</center></b></legend>
             <br>
 
 
@@ -105,6 +106,7 @@
             <label for="joinDate"><b>Join Date</label>
             
             <input type="Date" id="joinDate" name="joinDate" value="<?php echo $joinDate;?>">
+            <br>
 
             <label for="mob"><b>Mobile No</label>
             
@@ -122,6 +124,10 @@
             <label for="postalCode"><b>Postal Code</label>
             <input type="text" id="postalCode" name="postalCode" value="<?php echo $postalCode;?>">
             <p style="color:red" id="postalCodeErr"><?php echo $postalCodeErr; ?></p>
+            <br>
+
+            <label for="sal"><b>Salary</label>
+            <input type="text" id="sal" name="sal" value="<?php echo $sal;?>">
             <br>
 
             <center>

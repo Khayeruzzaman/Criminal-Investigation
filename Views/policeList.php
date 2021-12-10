@@ -45,7 +45,8 @@
                        <th>Name</th> 
                        <th>Designation</th>  
                        <th>Join Date</th>  
-                       <th>Mobile No</th>  
+                       <th>Mobile No</th>
+                       <th>Salary</th>  
                        <th>Postal Code</th>
                        <th>Action</th>
                        
@@ -64,6 +65,7 @@
                          <td>' . $police['JOB_POST'] . '</td>
                          <td>' . $police['JOIN_DATE'] . '</td>
                          <td>' . $police['POLICE_MOBILENO'] . '</td>
+                         <td>' . $police['SALARY'] . '</td>
                          <td>' . $police['POSTAL_CODE'] . '</td>
                          <td> 
                                <a href="policeListEdit.php?id='.$police['POLICE_ID'].'" style="textdecoration:none; padding:5px;">

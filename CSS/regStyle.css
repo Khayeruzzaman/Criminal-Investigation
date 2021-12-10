@@ -5,11 +5,11 @@
 	
 }
 body {
-        background-image: url('../Pictures/back1.jpg');
-          min-height: 100%; 
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+        background-image: url('../Pictures/b12.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+      
+          
 }
 
 .form legend{
@@ -22,11 +22,11 @@ body {
 
 .form {
         width:360px;
-        margin: 30px 480px;
+        margin: 75px 480px;
         padding:50px;
         border-radius: 10px;
         box-shadow: 0px 0px 30px black;
-        background-color: transparent; 
+        background: linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%);
         color: #34495e;
 
       }
@@ -78,24 +78,28 @@ body {
       }
 
 .topnav{
-    
-            background-color: #063146;
-            padding: 1% 7%;
-            text-align: right;
+ 
+            background: linear-gradient(315deg, #5de6de 0%, #b58ecc 74%);
+            text-align: center;
             font-size: 20px;
+            position: fixed;
+            padding: 1%;
+            top:0;
+            width: 100%;
         }
 
 .topnav a{
                       
-            color: white;
+            color: black;
             padding: 5px 15px;
             text-decoration: none;
             cursor: pointer;
         }
 
 .topnav a:hover{
-    background-color: #ddd;
-    color: black;
+    color: white;
+    
+
 }
 
 .reg-container{
@@ -109,7 +113,7 @@ body {
             position: absolute;
             top:23px;
             right: 0px;
-            background-color: #063146;
+            background: linear-gradient(315deg, #5de6de 0%, #b58ecc 74%);
             text-align: left;
             min-width: 100px;
             display: none;
@@ -117,23 +121,24 @@ body {
         }
 .reg-content a{
             display: block;
-            color: white;
+            color: black;
             padding: 5px 32px;
             text-decoration: none;
         
         }
 
-.reg-content a:hover {
-            background-color: #ddd;
-            color: black;
-        }
+
 .reg-container:hover .reg-content{
             display: block;
         }
 
 .footer {
+    background: linear-gradient(315deg, #5de6de 0%, #b58ecc 74%);
+    padding: 0.5%;
+    text-align: center;
+    position:fixed;
+    bottom:0;
     
-	background-color: #063146;
-	padding: 1% 7%;
-	
+    width:100%;
+    
 }

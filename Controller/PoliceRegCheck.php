@@ -9,6 +9,7 @@
       $joinDate = "";
       $password= "";
       $postalCode = "";
+      $sal ="";
     
     if(isset($_POST["submit"]))
     {
@@ -77,17 +78,15 @@
 
         $joinDate = date("d/m/Y", strtotime($_POST['joinDate']));
 
+        $sal = $_POST['sal'];
 
-        if($Name != "" && $jobPost != "" &&  $joinDate != "" && $mob != "" && $password != "" && $postalCode != "" )
+
+        if($Name != "" && $jobPost != "" &&  $joinDate != "" && $mob != "" && $password != "" && $postalCode != "" && $sal != "")
         {
          
-          $ins=insertPolice($Name, $jobPost, $joinDate, $mob , $password, $postalCode);
+          $ins=insertPolice($Name, $jobPost, $joinDate, $mob , $password, $postalCode, $sal);
           
-          echo '<script language="javascript">  if ( confirm("Successfully Added") ){
-
-            window.location= "http://localhost/Task/Criminal-Investigation/Views/policeReg.php";
-
-           }</script>';
+          
 
         }
 

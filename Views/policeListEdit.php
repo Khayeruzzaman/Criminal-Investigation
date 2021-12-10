@@ -112,11 +112,16 @@
                 <input type="text" id="password" name="password" 
                     value="<?php echo $user['PASSWORD'];?>">
 
+                
+
+                <label> Salary</label>
+                <input type="text" id="sal" name="sal" 
+                    value="<?php echo $user['SALARY'];?>">
+                <br>
+
                 <label> Postal Code</label>
                 <input type="text" id="postalCode" name="postalCode" 
                     value="<?php echo $user['POSTAL_CODE'];?>">
-
-               
                 <br>
                     
         
@@ -144,6 +149,7 @@
           var joinDate = document.getElementById('joinDate').value;
           var mobno = document.getElementById('mobno').value;
           var password = document.getElementById('password').value;
+          var sal = document.getElementById('sal').value;
           
           var postalCode = document.getElementById('postalCode').value;
           
@@ -174,7 +180,10 @@
            var password = "<?php echo $user['PASSWORD']; ?>"; 
           }
 
-          
+          if(sal== "")
+          {
+           var sal = "<?php echo $user['SALARY']; ?>"; 
+          }
 
           if(postalCode== "")
           {
@@ -191,6 +200,7 @@
                   'joinDate':joinDate,
                   'mobno':mobno,
                   'password':password,
+                  'sal':sal,
                   'postalCode':postalCode,
             
                 };

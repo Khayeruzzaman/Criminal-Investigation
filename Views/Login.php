@@ -35,8 +35,8 @@
         <legend>
         <a href="../../HOME1.html"> 
             <img align="left" src= "../Pictures/investigation.png" height="70px" width="70px" style="display: inline-block; "> </a> 
-             Crime &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-             Investigation
+              CRIME &nbsp  
+             INVESTIGATION
         </legend>
         <br>
         <br><br>
