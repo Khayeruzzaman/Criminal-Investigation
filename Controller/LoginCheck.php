@@ -38,6 +38,7 @@
             {
                 $_SESSION['mobNum'] = $mobNum;
                 $_SESSION['password'] = $password;
+                $_SESSION['userName'] = $user['ADMIN_NAME'];
                 
 
                 if(isset($_POST["Remember"])) 

@@ -64,6 +64,7 @@ if (isset($_COOKIE['flag']))
                                 <li><a href="adminReg.php"><i class="fa fa-user-plus"> Admin </i></a></li>
                                 <li><a href="ManuCitizenReg.php"><i class="fa fa-user-plus"> Citizen </i></a></li>
                                 <li><a href="policeReg.php"><i class="fa fa-plus-square"> Police </i></a></li>
+                                
                             </ul>
 
                         </li>    
@@ -79,8 +80,10 @@ if (isset($_COOKIE['flag']))
                         <li> <a href= "policeList.php"> <i class="fa fa-users"> Police </i> </a> </li>
                         <li> <a href= "citizensList.php"> <i class="fa fa-users"> Citizen </i> </a> </li>
                         <li> <a href= "CriminalList.php"> <i class="fa fa-users"> Criminal </i> </a> </li>
+                        <li> <a href= "stationList.php"> <i class="fa fa-users"> Station </i> </a> </li>
                     </ul> 
                 </li>
+               <li><a href= "history.php"> <i class="fa fa-history"> History </i> </a></li>
 
                 <li><a href= "settings.php"> <i class="fa fa-cog"> Settings </i> </a></li>
                 

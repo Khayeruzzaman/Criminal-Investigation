@@ -39,7 +39,10 @@
     <form method = "post" name= "jsFrom" onSubmit="submitForm(event)">
    
       <table id="personalPro" >
-      
+            <tr>
+                <th style="text-align: center; background-color: #373b8b; color: white;" colspan="3"> 
+                    <?php echo $user['ADMIN_NAME']; ?>'s Infromation </th>
+            </tr>
           <tr>
               <td> 
                   <b> Name : </b> 

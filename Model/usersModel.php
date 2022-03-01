@@ -67,6 +67,7 @@
                     </script>';
             }else{
                 oci_execute($result);
+				 
                 echo '<script language="javascript">  if ( confirm("Successfully Added") ){
 
 		            window.location= "http://localhost/Task/Criminal-Investigation/Views/policeReg.php";

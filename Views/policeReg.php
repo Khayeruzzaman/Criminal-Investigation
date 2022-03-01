@@ -25,8 +25,8 @@
 }
 
 .form {
-        width:360px;
-        margin: 30px 380px;
+        width:460px;
+        margin: 30px 330px;
         padding:50px;
         border-radius: 10px;
         box-shadow: 0px 0px 30px black;
